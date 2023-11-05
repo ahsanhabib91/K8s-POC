@@ -22,18 +22,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local-k8s", "local-k8s", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aks-acr-k8s", "aks-acr-k8s", "{F298BB3B-1C7F-46D3-B9D9-50A79DD4B8AA}"
 	ProjectSection(SolutionItems) = preProject
-		aks-k8s\apigateway.yaml = aks-k8s\apigateway.yaml
-		aks-k8s\identityservice.yaml = aks-k8s\identityservice.yaml
-		aks-k8s\redis.yaml = aks-k8s\redis.yaml
-		aks-k8s\userservice.yaml = aks-k8s\userservice.yaml
+		aks-acr-k8s\apigateway.yaml = aks-acr-k8s\apigateway.yaml
+		aks-acr-k8s\identityservice.yaml = aks-acr-k8s\identityservice.yaml
+		aks-acr-k8s\redis.yaml = aks-acr-k8s\redis.yaml
+		aks-acr-k8s\userservice.yaml = aks-acr-k8s\userservice.yaml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dockerhub-aks-k8s", "dockerhub-aks-k8s", "{AE682B7B-5581-4BBD-8D34-8BB0363178C5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aks-dockerhub-k8s", "aks-dockerhub-k8s", "{AE682B7B-5581-4BBD-8D34-8BB0363178C5}"
 	ProjectSection(SolutionItems) = preProject
-		dockerhub-k8s\apigateway.yaml = dockerhub-k8s\apigateway.yaml
-		dockerhub-k8s\identityservice.yaml = dockerhub-k8s\identityservice.yaml
-		dockerhub-k8s\redis.yaml = dockerhub-k8s\redis.yaml
-		dockerhub-k8s\userservice.yaml = dockerhub-k8s\userservice.yaml
+		aks-dockerhub-k8s\apigateway.yaml = aks-dockerhub-k8s\apigateway.yaml
+		aks-dockerhub-k8s\identityservice.yaml = aks-dockerhub-k8s\identityservice.yaml
+		aks-dockerhub-k8s\redis.yaml = aks-dockerhub-k8s\redis.yaml
+		aks-dockerhub-k8s\userservice.yaml = aks-dockerhub-k8s\userservice.yaml
 	EndProjectSection
 EndProject
 Global
