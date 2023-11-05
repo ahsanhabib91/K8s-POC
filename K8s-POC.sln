@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{72866415-E7DB-4A85-A7DD-EB5FC58D1FC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "IdentityService\IdentityService.csproj", "{EF4F523D-ADCE-4C46-A82F-16B33A179044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{DE10C191-1190-47D5-9095-D8E838D3DBB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{398AAFF8-C9E1-4A6C-908F-DDB44E99C78F}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		nginx.conf = nginx.conf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local-k8s", "local-k8s", "{62E17299-43BA-4ED6-BB92-3503007FE9DC}"
+	ProjectSection(SolutionItems) = preProject
+		local-k8s\apigateway.yaml = local-k8s\apigateway.yaml
+		local-k8s\redis.yaml = local-k8s\redis.yaml
+		local-k8s\userservice.yaml = local-k8s\userservice.yaml
+		local-k8s\identityservice.yaml = local-k8s\identityservice.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aks-acr-k8s", "aks-acr-k8s", "{F298BB3B-1C7F-46D3-B9D9-50A79DD4B8AA}"
+	ProjectSection(SolutionItems) = preProject
+		aks-k8s\apigateway.yaml = aks-k8s\apigateway.yaml
+		aks-k8s\identityservice.yaml = aks-k8s\identityservice.yaml
+		aks-k8s\redis.yaml = aks-k8s\redis.yaml
+		aks-k8s\userservice.yaml = aks-k8s\userservice.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dockerhub-aks-k8s", "dockerhub-aks-k8s", "{AE682B7B-5581-4BBD-8D34-8BB0363178C5}"
+	ProjectSection(SolutionItems) = preProject
+		dockerhub-k8s\apigateway.yaml = dockerhub-k8s\apigateway.yaml
+		dockerhub-k8s\identityservice.yaml = dockerhub-k8s\identityservice.yaml
+		dockerhub-k8s\redis.yaml = dockerhub-k8s\redis.yaml
+		dockerhub-k8s\userservice.yaml = dockerhub-k8s\userservice.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72866415-E7DB-4A85-A7DD-EB5FC58D1FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72866415-E7DB-4A85-A7DD-EB5FC58D1FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72866415-E7DB-4A85-A7DD-EB5FC58D1FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72866415-E7DB-4A85-A7DD-EB5FC58D1FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF4F523D-ADCE-4C46-A82F-16B33A179044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4F523D-ADCE-4C46-A82F-16B33A179044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4F523D-ADCE-4C46-A82F-16B33A179044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4F523D-ADCE-4C46-A82F-16B33A179044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE10C191-1190-47D5-9095-D8E838D3DBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE10C191-1190-47D5-9095-D8E838D3DBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE10C191-1190-47D5-9095-D8E838D3DBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE10C191-1190-47D5-9095-D8E838D3DBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62E17299-43BA-4ED6-BB92-3503007FE9DC} = {398AAFF8-C9E1-4A6C-908F-DDB44E99C78F}
+		{F298BB3B-1C7F-46D3-B9D9-50A79DD4B8AA} = {398AAFF8-C9E1-4A6C-908F-DDB44E99C78F}
+		{AE682B7B-5581-4BBD-8D34-8BB0363178C5} = {398AAFF8-C9E1-4A6C-908F-DDB44E99C78F}
+	EndGlobalSection
+EndGlobal
