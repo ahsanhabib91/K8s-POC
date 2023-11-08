@@ -13,8 +13,8 @@ services:
   apigateway:
     image: apigateway
     build:
-      context: .
-      dockerfile: ApiGateway/Dockerfile
+      context: ./ApiGateway
+      dockerfile: Dockerfile
     depends_on:
       - userservice
     environment:
@@ -33,8 +33,8 @@ services:
   userservice:
     image: userservice
     build:
-      context: .
-      dockerfile: UserService/Dockerfile
+      context: ./UserService
+      dockerfile: Dockerfile
     depends_on:
       - redis
     environment:
