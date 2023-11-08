@@ -48,8 +48,8 @@ services:
   identityservice:
     image: identityservice
     build:
-      context: .
-      dockerfile: IdentityService/Dockerfile
+      context: ./IdentityService
+      dockerfile: Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
