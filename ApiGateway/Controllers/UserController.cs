@@ -43,4 +43,24 @@ public class UserController : ControllerBase
         }
     }
 
+    [HttpGet("weather-forecast/id/all")]
+    public async Task<ActionResult<List<string>>> Get()
+    {
+        try
+        {
+            var keys = new List<string>();
+            var response = await HttpClient.GetAsync($"WeatherForecast/id/all");
+
+            if (!response.IsSuccessStatusCode) return keys;
+
+            keys = await response.Content.ReadFromJsonAsync<List<string>>() ?? keys;
+            return keys;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            throw;
+        }
+    }
+
 }

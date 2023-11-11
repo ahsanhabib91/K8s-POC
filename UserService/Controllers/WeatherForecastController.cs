@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using StackExchange.Redis;
@@ -16,11 +15,15 @@ public class WeatherForecastController : ControllerBase
 
     private readonly ILogger<WeatherForecastController> _logger;
     private readonly IDatabase _redis;
+    private readonly IServer _redisServer;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger, IConnectionMultiplexer connectionMultiplexer)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger,
+        IConnectionMultiplexer connectionMultiplexer,
+        IConfiguration configuration)
     {
         _logger = logger;
         _redis = connectionMultiplexer.GetDatabase();
+        _redisServer = connectionMultiplexer.GetServer(configuration.GetConnectionString("Redis"));
     }
 
     private string GetKey(string id) => $"user-service-{id}";
@@ -52,6 +55,12 @@ public class WeatherForecastController : ControllerBase
 
         var weather = JsonSerializer.Deserialize<WeatherForecast>(value);
         return weather;
+    }
+
+    [HttpGet("id/all")]
+    public List<string> GetAllIds()
+    {
+        return _redisServer.Keys(pattern: "*").Select(key => (string)key).ToList();
     }
 
 }
