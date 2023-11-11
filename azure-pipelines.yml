@@ -8,8 +8,6 @@ trigger:
 resources:
 - repo: self
 
-pool:
-  vmImage: 'ubuntu-latest'
 
 variables:
   tag: '$(Build.BuildId)'
