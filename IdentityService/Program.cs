@@ -18,17 +18,7 @@ if (app.Environment.IsDevelopment() || true)
 
 // app.UseHttpsRedirection();
 
-app.Use(async (context, next) =>
-{
-    if (context.Request.Path == "/")
-    {
-        context.Response.Redirect("/swagger");
-    }
-    else
-    {
-        await next();
-    }
-});
+app.MapGet("/", () => "Hello World from IdentityService!");
 
 app.UseAuthorization();
 
