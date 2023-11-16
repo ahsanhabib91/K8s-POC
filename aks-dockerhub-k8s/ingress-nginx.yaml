@@ -4,27 +4,75 @@ metadata:
   name: ingress-service
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: userservice
-      port:
-        number: 8080
+  tls:
+    - hosts:
+        - mydomain.com
+      secretName: root-dev-secret
+    - hosts:
+        - identityservice.mydomain.com
+      secretName: identityservice-dev-secret
+    - hosts:
+        - userservice.mydomain.com
+      secretName: userservice-dev-secret
+#  defaultBackend:
+#    service:
+#      name: userservice
+#      port:
+#        number: 8080
   rules:
-    - http: # Any host name
+    - host: identityservice.mydomain.com
+      http:
         paths:
-          - path: /identity-service
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: identityservice
                 port:
                   number: 8080
+    - host: userservice.mydomain.com
+      http:
+        paths:
           - path: /
-            pathType: Prefix #Exact
+            pathType: Prefix
+            backend:
+              service:
+                name: userservice
+                port:
+                  number: 8080
+    - host: mydomain.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: apigateway
                 port:
                   number: 8080
+#      http: # Any host name
+#        paths:
+#          - path: /identity-service
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: identityservice
+#                port:
+#                  number: 8080
+#          - path: /userservice
+#            pathType: Prefix #Exact
+#            backend:
+#              service:
+#                name: userservice
+#                port:
+#                  number: 8080
+#          - path: /
+#            pathType: Prefix #Exact
+#            backend:
+#              service:
+#                name: apigateway
+#                port:
+#                  number: 8080

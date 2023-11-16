@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 		nginx.conf = nginx.conf
 		azure-pipelines.yml = azure-pipelines.yml
+		cluster-issuer.yaml = cluster-issuer.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local-k8s", "local-k8s", "{62E17299-43BA-4ED6-BB92-3503007FE9DC}"
